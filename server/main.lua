@@ -19,7 +19,7 @@ AddEventHandler('qb-coke:server:grindleaves', function()
 
     if Player.PlayerData.items ~= nil then 
         for k, v in pairs(Player.PlayerData.items) do 
-            if cocaleaf ~= nil then
+            if cocaleaf > 0 then
                 if ItemList[Player.PlayerData.items[k].name] ~= nil then 
                     if Player.PlayerData.items[k].name == "cocaleaf" and Player.PlayerData.items[k].amount >= 2 then 
                         Player.Functions.RemoveItem("cocaleaf", 2)
@@ -47,7 +47,7 @@ AddEventHandler('qb-coke:server:processCrack', function()
 
     if Player.PlayerData.gang.name == "ballas" then
         if Player.PlayerData.items ~= nil then 
-            if cokebaggy ~= nil then 
+            if cokebaggy > 0 then 
                 if cokebaggy.amount >= 2 then 
 
                     Player.Functions.RemoveItem("cokebaggy", 2, false)
@@ -77,7 +77,7 @@ AddEventHandler('qb-coke:server:cokesell', function()
 
     if Player.PlayerData.items ~= nil then 
         for k, v in pairs(Player.PlayerData.items) do 
-            if cokebaggy ~= nil then
+            if cokebaggy > 0 then
                 if DrugList[Player.PlayerData.items[k].name] ~= nil then 
                     if Player.PlayerData.items[k].name == "cokebaggy" and Player.PlayerData.items[k].amount >= 1 then 
                         local random = math.random(50, 65)
