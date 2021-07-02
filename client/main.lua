@@ -1,18 +1,9 @@
-QBCore = nil
-
 local NeededAttempts = 0
 local SucceededAttempts = 0
 local FailedAttemps = 0
 local cokepicking = false
 local cokeprocess = false
 local nearDealer = false
-
-Citizen.CreateThread(function()
-	while QBCore == nil do
-		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-		Citizen.Wait(0)
-	end
-end)
 
 DrawText3Ds = function(x, y, z, text)
 	SetTextScale(0.35, 0.35)
