@@ -18,7 +18,7 @@ AddEventHandler('qb-coke:server:grindleaves', function()
             if cocaleaf ~= nil then
                 if ItemList[Player.PlayerData.items[k].name] ~= nil then 
                     if Player.PlayerData.items[k].name == "cocaleaf" and Player.PlayerData.items[k].amount >= 2 then 
-                        Player.Functions.RemoveItem("cocaleaf", 2)
+                        Player.Functions.RemoveItem("cocaleaf", 100)
                         TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['cocaleaf'], "remove")
 
                         TriggerClientEvent("qb-coke:client:grindleavesMinigame", src)
@@ -103,15 +103,15 @@ end)
 RegisterServerEvent('qb-coke:server:getleaf')
 AddEventHandler('qb-coke:server:getleaf', function()
     local Player = QBCore.Functions.GetPlayer(source)
-    Player.Functions.AddItem("cocaleaf", 10)
+    Player.Functions.AddItem("cocaleaf", 1)
     TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['cocaleaf'], "add")
 end)
 
 RegisterServerEvent('qb-coke:server:getcoke')
 AddEventHandler('qb-coke:server:getcoke', function()
     local Player = QBCore.Functions.GetPlayer(source)
-    Player.Functions.AddItem("cokebaggy", 1)
-    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['cokebaggy'], "add")
+    Player.Functions.AddItem("coke_brick", 1)
+    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['coke_brick'], "add")
 end)
 
 RegisterServerEvent('qb-coke:server:getcrack')
